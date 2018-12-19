@@ -10,34 +10,134 @@ import UIKit
 import SwiftSoup
 
 class RecipeParser: NSObject {
-
-    //MARK: - properties
-    public let url: URL
-    
-    //MARK: - Initializers
-    init(newURL: URL) {
-        url = newURL
-        super.init()
-    }
-    
-    //MARK: - utilities
-    func hostURL() -> String? {
-        return url.host
-    }
-    
-    
-//    func something() {
-//        if let url = URL(string: "https://ohsheglows.com/2018/11/24/instant-pot-creamiest-steel-cut-oatmeal-with-stovetop-version/") {
-//            let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
-//
-//            let result = try SwiftSoup.parse(html)
-//            let ingredientsClear = try result.select("ul.ingredients")
-//            ingredientsClear.forEach { print($0) }
-//        }
-//
-//
-//    } catch  {
-//    print("There was an error parsing the HTML. \(error)")
-//    }
-//    }
+	
+	//MARK: - RecipeContentType
+	enum RecipeContentType: String {
+		case ohSheGlows = "ohsheglows.com"
+		case unsupported = "unsupported"
+		
+		//MARK: - init
+		init(host: String?) {
+			switch host {
+			case RecipeContentType.ohSheGlows.rawValue:
+				self = .ohSheGlows
+			default:
+				self = .unsupported
+			}
+		}
+		
+		//MARK: - properties
+		var ingredientsQuery: String {
+			switch self {
+			case .ohSheGlows:
+				return "span.ingredient"
+			default:
+				return ""
+			}
+		}
+		
+		var instructionQuery: String {
+			switch self {
+			case .ohSheGlows:
+				return "li.instruction"
+			default:
+				return ""
+			}
+		}
+		
+		var titleQuery: String {
+			switch self {
+			case .ohSheGlows:
+				return "title"
+			default:
+				return ""
+			}
+		}
+		
+	}
+	
+	//MARK: - properties
+	let url: URL
+	let contentType: RecipeContentType
+	
+	lazy var documentOrNil: Document? = { [unowned self] in
+		var doc: Document? = nil
+		do {
+			let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
+			doc = try SwiftSoup.parse(html)
+		} catch let error {
+			print("There was an error trying to pars the URL: \(url) error: \(error)")
+		}
+		
+		return doc
+	}()
+	
+	lazy var ingredientList: [String] = { [unowned self] in
+		var ingredientsList: [String] = []
+		guard let document = documentOrNil else {
+			print("No document returning empty ingredient list.")
+			return ingredientsList
+		}
+		
+		let query = contentType.ingredientsQuery
+		do {
+			ingredientsList = try document.select(query).map({ try $0.text() })
+		} catch let error {
+			print("There was an error trying to select the ingredeint query \(query). Error - \(error)")
+		}
+		return ingredientsList
+	}()
+	
+	lazy var instructionList: [String] = { [unowned self] in
+		var instructionList: [String] = []
+		guard let document = documentOrNil else {
+			print("No document returning empty instruction list.")
+			return instructionList
+		}
+		
+		let query = contentType.instructionQuery
+		do {
+			instructionList = try document.select(query).map({ try $0.text() })
+		} catch let error {
+			print("There was an error trying to select the instruction query \(query). Error - \(error)")
+		}
+		return instructionList
+	}()
+	
+	lazy var titleList: [String] = { [unowned self] in
+		var titleList: [String] = []
+		guard let document = documentOrNil else {
+			print("No document returning empty instruction list.")
+			return instructionList
+		}
+		
+		let query = contentType.titleQuery
+		do {
+			titleList = try document.select(query).map({ try $0.text() })
+		} catch let error {
+			print("There was an error trying to select the instruction query \(query). Error - \(error)")
+		}
+		return titleList
+	}()
+	
+	//MARK: - Initializers
+	init(newURL: URL) {
+		url = newURL
+		contentType = RecipeContentType(host: url.host)
+		super.init()
+	}
+	//    func something() {
+	//        if let url = URL(string: "https://ohsheglows.com/2018/11/24/instant-pot-creamiest-steel-cut-oatmeal-with-stovetop-version/") {
+	//            let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
+	//
+	//            let result = try SwiftSoup.parse(html)
+	//            let ingredientsClear = try result.select("ul.ingredients")
+	//            ingredientsClear.forEach { print($0) }
+	//        }
+	//
+	//
+	//    } catch  {
+	//    print("There was an error parsing the HTML. \(error)")
+	//    }
+	//    }
 }

@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import SwiftSoup
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		if let url = URL(string: "https://ohsheglows.com/2018/11/24/instant-pot-creamiest-steel-cut-oatmeal-with-stovetop-version/") {
+			do {
+				let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
+				
+				let result = try SwiftSoup.parse(html)
+				let ingredientsClear = try result.select("title")
+				ingredientsClear.forEach { print($0) }
+			}
+			catch  {
+				print("There was an error parsing the HTML. \(error)")
+			}
+		}
+	}
+	
 }
 
