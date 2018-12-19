@@ -12,7 +12,23 @@
 		566162C221C9EF67000938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C021C9EF67000938CB /* Main.storyboard */; };
 		566162C421C9EF6A000938CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566162C321C9EF6A000938CB /* Assets.xcassets */; };
 		566162C721C9EF6A000938CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C521C9EF6A000938CB /* LaunchScreen.storyboard */; };
+		566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
+		566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162D621C9EFFF000938CB /* EscargotTests.swift */; };
+		566162DE21C9F006000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
+		566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162DF21C9F050000938CB /* RecipeParserTests.swift */; };
+		566162E721C9F2AB000938CB /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566162E621C9F2AB000938CB /* SwiftSoup.framework */; };
+		566162E921C9F388000938CB /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566162E821C9F388000938CB /* SwiftSoup.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		566162D921C9EFFF000938CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 566162B121C9EF67000938CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 566162B821C9EF67000938CB;
+			remoteInfo = Escargot;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		566162B921C9EF67000938CB /* Escargot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Escargot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,13 @@
 		566162C321C9EF6A000938CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		566162C621C9EF6A000938CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		566162C821C9EF6A000938CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		566162CE21C9EFEF000938CB /* RecipeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParser.swift; sourceTree = "<group>"; };
+		566162D421C9EFFF000938CB /* EscargotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EscargotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		566162D621C9EFFF000938CB /* EscargotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscargotTests.swift; sourceTree = "<group>"; };
+		566162D821C9EFFF000938CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		566162DF21C9F050000938CB /* RecipeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParserTests.swift; sourceTree = "<group>"; };
+		566162E621C9F2AB000938CB /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		566162E821C9F388000938CB /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +52,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566162E921C9F388000938CB /* SwiftSoup.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566162D121C9EFFF000938CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566162E721C9F2AB000938CB /* SwiftSoup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				566162BB21C9EF67000938CB /* Escargot */,
+				566162D521C9EFFF000938CB /* EscargotTests */,
 				566162BA21C9EF67000938CB /* Products */,
+				566162E521C9F2AB000938CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				566162B921C9EF67000938CB /* Escargot.app */,
+				566162D421C9EFFF000938CB /* EscargotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +89,66 @@
 		566162BB21C9EF67000938CB /* Escargot */ = {
 			isa = PBXGroup;
 			children = (
-				566162BC21C9EF67000938CB /* AppDelegate.swift */,
-				566162BE21C9EF67000938CB /* ViewController.swift */,
-				566162C021C9EF67000938CB /* Main.storyboard */,
 				566162C321C9EF6A000938CB /* Assets.xcassets */,
-				566162C521C9EF6A000938CB /* LaunchScreen.storyboard */,
 				566162C821C9EF6A000938CB /* Info.plist */,
+				566162BC21C9EF67000938CB /* AppDelegate.swift */,
+				566162E421C9F08A000938CB /* ViewControllers */,
+				566162E221C9F070000938CB /* UI */,
+				566162E321C9F07A000938CB /* Utilities */,
 			);
 			path = Escargot;
+			sourceTree = "<group>";
+		};
+		566162D521C9EFFF000938CB /* EscargotTests */ = {
+			isa = PBXGroup;
+			children = (
+				566162DF21C9F050000938CB /* RecipeParserTests.swift */,
+				566162D621C9EFFF000938CB /* EscargotTests.swift */,
+				566162E121C9F058000938CB /* Extras */,
+			);
+			path = EscargotTests;
+			sourceTree = "<group>";
+		};
+		566162E121C9F058000938CB /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				566162D821C9EFFF000938CB /* Info.plist */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		566162E221C9F070000938CB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				566162C021C9EF67000938CB /* Main.storyboard */,
+				566162C521C9EF6A000938CB /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		566162E321C9F07A000938CB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				566162CE21C9EFEF000938CB /* RecipeParser.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		566162E421C9F08A000938CB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				566162BE21C9EF67000938CB /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		566162E521C9F2AB000938CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				566162E821C9F388000938CB /* SwiftSoup.framework */,
+				566162E621C9F2AB000938CB /* SwiftSoup.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +171,24 @@
 			productReference = 566162B921C9EF67000938CB /* Escargot.app */;
 			productType = "com.apple.product-type.application";
 		};
+		566162D321C9EFFF000938CB /* EscargotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 566162DB21C9EFFF000938CB /* Build configuration list for PBXNativeTarget "EscargotTests" */;
+			buildPhases = (
+				566162D021C9EFFF000938CB /* Sources */,
+				566162D121C9EFFF000938CB /* Frameworks */,
+				566162D221C9EFFF000938CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				566162DA21C9EFFF000938CB /* PBXTargetDependency */,
+			);
+			name = EscargotTests;
+			productName = EscargotTests;
+			productReference = 566162D421C9EFFF000938CB /* EscargotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +201,10 @@
 				TargetAttributes = {
 					566162B821C9EF67000938CB = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					566162D321C9EFFF000938CB = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 566162B821C9EF67000938CB;
 					};
 				};
 			};
@@ -113,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				566162B821C9EF67000938CB /* Escargot */,
+				566162D321C9EFFF000938CB /* EscargotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +238,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		566162D221C9EFFF000938CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,10 +254,29 @@
 			files = (
 				566162BF21C9EF67000938CB /* ViewController.swift in Sources */,
 				566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */,
+				566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566162D021C9EFFF000938CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566162DE21C9F006000938CB /* RecipeParser.swift in Sources */,
+				566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */,
+				566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		566162DA21C9EFFF000938CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 566162B821C9EF67000938CB /* Escargot */;
+			targetProxy = 566162D921C9EFFF000938CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		566162C021C9EF67000938CB /* Main.storyboard */ = {
@@ -314,6 +450,46 @@
 			};
 			name = Release;
 		};
+		566162DC21C9EFFF000938CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52UN9P9E5H;
+				INFOPLIST_FILE = EscargotTests/Extras/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flower.heavenly.EscargotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Escargot.app/Escargot";
+			};
+			name = Debug;
+		};
+		566162DD21C9EFFF000938CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52UN9P9E5H;
+				INFOPLIST_FILE = EscargotTests/Extras/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flower.heavenly.EscargotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Escargot.app/Escargot";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +507,15 @@
 			buildConfigurations = (
 				566162CC21C9EF6A000938CB /* Debug */,
 				566162CD21C9EF6A000938CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		566162DB21C9EFFF000938CB /* Build configuration list for PBXNativeTarget "EscargotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566162DC21C9EFFF000938CB /* Debug */,
+				566162DD21C9EFFF000938CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
