@@ -7,7 +7,20 @@
 		<key>Escargot.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>566162B821C9EF67000938CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>566162D321C9EFFF000938CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
