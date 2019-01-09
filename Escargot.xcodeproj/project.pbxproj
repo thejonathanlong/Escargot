@@ -15,7 +15,7 @@
 		566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
 		566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162D621C9EFFF000938CB /* EscargotTests.swift */; };
 		566162DE21C9F006000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
-		566162E021C9F050000938CB /* RecipeParserTests_OhSheGlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162DF21C9F050000938CB /* RecipeParserTests_OhSheGlows.swift */; };
+		566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162DF21C9F050000938CB /* RecipeParserTests.swift */; };
 		566162E721C9F2AB000938CB /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566162E621C9F2AB000938CB /* SwiftSoup.framework */; };
 		566162E921C9F388000938CB /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566162E821C9F388000938CB /* SwiftSoup.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +42,7 @@
 		566162D421C9EFFF000938CB /* EscargotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EscargotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566162D621C9EFFF000938CB /* EscargotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscargotTests.swift; sourceTree = "<group>"; };
 		566162D821C9EFFF000938CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		566162DF21C9F050000938CB /* RecipeParserTests_OhSheGlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParserTests_OhSheGlows.swift; sourceTree = "<group>"; };
+		566162DF21C9F050000938CB /* RecipeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParserTests.swift; sourceTree = "<group>"; };
 		566162E621C9F2AB000938CB /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		566162E821C9F388000938CB /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,7 +102,7 @@
 		566162D521C9EFFF000938CB /* EscargotTests */ = {
 			isa = PBXGroup;
 			children = (
-				566162DF21C9F050000938CB /* RecipeParserTests_OhSheGlows.swift */,
+				566162DF21C9F050000938CB /* RecipeParserTests.swift */,
 				566162D621C9EFFF000938CB /* EscargotTests.swift */,
 				566162E121C9F058000938CB /* Extras */,
 			);
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				566162DE21C9F006000938CB /* RecipeParser.swift in Sources */,
-				566162E021C9F050000938CB /* RecipeParserTests_OhSheGlows.swift in Sources */,
+				566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */,
 				566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

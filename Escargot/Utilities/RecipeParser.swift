@@ -15,12 +15,15 @@ class RecipeParser: NSObject {
 	enum RecipeContentType: String {
 		case ohSheGlows = "ohsheglows.com"
 		case unsupported = "unsupported"
+		case againstAllGrain = "againstallgrain.com"
 		
 		//MARK: - init
 		init(host: String?) {
 			switch host {
 			case RecipeContentType.ohSheGlows.rawValue:
 				self = .ohSheGlows
+			case RecipeContentType.againstAllGrain.rawValue:
+				self = .againstAllGrain
 			default:
 				self = .unsupported
 			}
@@ -31,6 +34,8 @@ class RecipeParser: NSObject {
 			switch self {
 			case .ohSheGlows:
 				return "span.ingredient"
+			case .againstAllGrain:
+				return "span.ingredient"
 			default:
 				return ""
 			}
@@ -40,6 +45,8 @@ class RecipeParser: NSObject {
 			switch self {
 			case .ohSheGlows:
 				return "li.instruction"
+			case .againstAllGrain:
+				return "li.instruction"
 			default:
 				return ""
 			}
@@ -48,6 +55,8 @@ class RecipeParser: NSObject {
 		var titleQuery: String {
 			switch self {
 			case .ohSheGlows:
+				return "title"
+			case .againstAllGrain:
 				return "title"
 			default:
 				return ""

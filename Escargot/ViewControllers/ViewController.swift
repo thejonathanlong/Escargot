@@ -13,12 +13,12 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		if let url = URL(string: "https://ohsheglows.com/2018/11/24/instant-pot-creamiest-steel-cut-oatmeal-with-stovetop-version/") {
+		if let url = URL(string: "https://againstallgrain.com/2018/07/18/instant-pot-paleo-spaghetti-meat-sauce-recipe/") {
 			do {
 				let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
 				
 				let result = try SwiftSoup.parse(html)
-				let ingredientsClear = try result.select("title")
+				let ingredientsClear = try result.select("span.ingredient")
 				ingredientsClear.forEach { print($0) }
 			}
 			catch  {
