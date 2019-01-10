@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561C8E7F21E69EA6000F051D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E7E21E69EA6000F051D /* ShareViewController.swift */; };
+		561C8E8221E69EA6000F051D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561C8E8021E69EA6000F051D /* MainInterface.storyboard */; };
+		561C8E8621E69EA6000F051D /* EscargotSharingExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 561C8E7C21E69EA5000F051D /* EscargotSharingExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		561C8E8D21E6A8A6000F051D /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
+		561C8E9021E6ACFE000F051D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C8E8F21E6ACFD000F051D /* CloudKit.framework */; };
+		561C8E9221E6AD65000F051D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C8E8F21E6ACFD000F051D /* CloudKit.framework */; };
+		561C8E9721E6ADBE000F051D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9421E6ADBE000F051D /* Recipe.swift */; };
+		561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9521E6ADBE000F051D /* Measurement.swift */; };
+		561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9621E6ADBE000F051D /* Ingredient.swift */; };
 		566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BC21C9EF67000938CB /* AppDelegate.swift */; };
 		566162BF21C9EF67000938CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BE21C9EF67000938CB /* ViewController.swift */; };
 		566162C221C9EF67000938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C021C9EF67000938CB /* Main.storyboard */; };
@@ -21,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		561C8E8421E69EA6000F051D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 566162B121C9EF67000938CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561C8E7B21E69EA5000F051D;
+			remoteInfo = EscargotSharingExtension;
+		};
 		566162D921C9EFFF000938CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 566162B121C9EF67000938CB /* Project object */;
@@ -30,7 +46,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		561C8E8A21E69EA6000F051D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				561C8E8621E69EA6000F051D /* EscargotSharingExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		561C8E7C21E69EA5000F051D /* EscargotSharingExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EscargotSharingExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		561C8E7E21E69EA6000F051D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		561C8E8121E69EA6000F051D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		561C8E8321E69EA6000F051D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		561C8E8E21E6ACE7000F051D /* Escargot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Escargot.entitlements; sourceTree = "<group>"; };
+		561C8E8F21E6ACFD000F051D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		561C8E9121E6AD60000F051D /* EscargotSharingExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EscargotSharingExtension.entitlements; sourceTree = "<group>"; };
+		561C8E9421E6ADBE000F051D /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ../../../Cooks/Cooks/Model/Recipe.swift; sourceTree = "<group>"; };
+		561C8E9521E6ADBE000F051D /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Measurement.swift; path = ../../../Cooks/Cooks/Model/Measurement.swift; sourceTree = "<group>"; };
+		561C8E9621E6ADBE000F051D /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = ../../../Cooks/Cooks/Model/Ingredient.swift; sourceTree = "<group>"; };
 		566162B921C9EF67000938CB /* Escargot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Escargot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566162BC21C9EF67000938CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		566162BE21C9EF67000938CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,11 +88,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		561C8E7921E69EA5000F051D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561C8E9221E6AD65000F051D /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		566162B621C9EF67000938CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				566162E921C9F388000938CB /* SwiftSoup.framework in Frameworks */,
+				561C8E9021E6ACFE000F051D /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,10 +116,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561C8E7D21E69EA6000F051D /* EscargotSharingExtension */ = {
+			isa = PBXGroup;
+			children = (
+				561C8E9121E6AD60000F051D /* EscargotSharingExtension.entitlements */,
+				561C8E7E21E69EA6000F051D /* ShareViewController.swift */,
+				561C8E8021E69EA6000F051D /* MainInterface.storyboard */,
+				561C8E8321E69EA6000F051D /* Info.plist */,
+			);
+			path = EscargotSharingExtension;
+			sourceTree = "<group>";
+		};
+		561C8E9321E6AD95000F051D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				561C8E9621E6ADBE000F051D /* Ingredient.swift */,
+				561C8E9521E6ADBE000F051D /* Measurement.swift */,
+				561C8E9421E6ADBE000F051D /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		566162B021C9EF67000938CB = {
 			isa = PBXGroup;
 			children = (
 				566162BB21C9EF67000938CB /* Escargot */,
+				566162E421C9F08A000938CB /* ViewControllers */,
+				561C8E7D21E69EA6000F051D /* EscargotSharingExtension */,
 				566162D521C9EFFF000938CB /* EscargotTests */,
 				566162BA21C9EF67000938CB /* Products */,
 				566162E521C9F2AB000938CB /* Frameworks */,
@@ -82,6 +154,7 @@
 			children = (
 				566162B921C9EF67000938CB /* Escargot.app */,
 				566162D421C9EFFF000938CB /* EscargotTests.xctest */,
+				561C8E7C21E69EA5000F051D /* EscargotSharingExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,10 +162,11 @@
 		566162BB21C9EF67000938CB /* Escargot */ = {
 			isa = PBXGroup;
 			children = (
+				561C8E8E21E6ACE7000F051D /* Escargot.entitlements */,
 				566162C321C9EF6A000938CB /* Assets.xcassets */,
 				566162C821C9EF6A000938CB /* Info.plist */,
 				566162BC21C9EF67000938CB /* AppDelegate.swift */,
-				566162E421C9F08A000938CB /* ViewControllers */,
+				561C8E9321E6AD95000F051D /* Model */,
 				566162E221C9F070000938CB /* UI */,
 				566162E321C9F07A000938CB /* Utilities */,
 			);
@@ -145,6 +219,7 @@
 		566162E521C9F2AB000938CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				561C8E8F21E6ACFD000F051D /* CloudKit.framework */,
 				566162E821C9F388000938CB /* SwiftSoup.framework */,
 				566162E621C9F2AB000938CB /* SwiftSoup.framework */,
 			);
@@ -154,6 +229,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		561C8E7B21E69EA5000F051D /* EscargotSharingExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561C8E8921E69EA6000F051D /* Build configuration list for PBXNativeTarget "EscargotSharingExtension" */;
+			buildPhases = (
+				561C8E7821E69EA5000F051D /* Sources */,
+				561C8E7921E69EA5000F051D /* Frameworks */,
+				561C8E7A21E69EA5000F051D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EscargotSharingExtension;
+			productName = EscargotSharingExtension;
+			productReference = 561C8E7C21E69EA5000F051D /* EscargotSharingExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		566162B821C9EF67000938CB /* Escargot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 566162CB21C9EF6A000938CB /* Build configuration list for PBXNativeTarget "Escargot" */;
@@ -161,10 +253,12 @@
 				566162B521C9EF67000938CB /* Sources */,
 				566162B621C9EF67000938CB /* Frameworks */,
 				566162B721C9EF67000938CB /* Resources */,
+				561C8E8A21E69EA6000F051D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				561C8E8521E69EA6000F051D /* PBXTargetDependency */,
 			);
 			name = Escargot;
 			productName = Escargot;
@@ -199,8 +293,27 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Heavenly Flower";
 				TargetAttributes = {
+					561C8E7B21E69EA5000F051D = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					566162B821C9EF67000938CB = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					566162D321C9EFFF000938CB = {
 						CreatedOnToolsVersion = 10.1;
@@ -223,11 +336,20 @@
 			targets = (
 				566162B821C9EF67000938CB /* Escargot */,
 				566162D321C9EFFF000938CB /* EscargotTests */,
+				561C8E7B21E69EA5000F051D /* EscargotSharingExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		561C8E7A21E69EA5000F051D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561C8E8221E69EA6000F051D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		566162B721C9EF67000938CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,13 +370,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		561C8E7821E69EA5000F051D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561C8E8D21E6A8A6000F051D /* RecipeParser.swift in Sources */,
+				561C8E7F21E69EA6000F051D /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		566162B521C9EF67000938CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				566162BF21C9EF67000938CB /* ViewController.swift in Sources */,
 				566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */,
+				561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */,
+				561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */,
 				566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */,
+				561C8E9721E6ADBE000F051D /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +405,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		561C8E8521E69EA6000F051D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561C8E7B21E69EA5000F051D /* EscargotSharingExtension */;
+			targetProxy = 561C8E8421E69EA6000F051D /* PBXContainerItemProxy */;
+		};
 		566162DA21C9EFFF000938CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 566162B821C9EF67000938CB /* Escargot */;
@@ -279,6 +418,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		561C8E8021E69EA6000F051D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				561C8E8121E69EA6000F051D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		566162C021C9EF67000938CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,6 +445,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		561C8E8721E69EA6000F051D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EscargotSharingExtension/EscargotSharingExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52UN9P9E5H;
+				INFOPLIST_FILE = EscargotSharingExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flower.heavenly.Escargot.EscargotSharingExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		561C8E8821E69EA6000F051D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EscargotSharingExtension/EscargotSharingExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52UN9P9E5H;
+				INFOPLIST_FILE = EscargotSharingExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flower.heavenly.Escargot.EscargotSharingExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		566162C921C9EF6A000938CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -417,7 +604,9 @@
 		566162CC21C9EF6A000938CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Escargot/Escargot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52UN9P9E5H;
 				INFOPLIST_FILE = Escargot/Info.plist;
@@ -435,7 +624,9 @@
 		566162CD21C9EF6A000938CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Escargot/Escargot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52UN9P9E5H;
 				INFOPLIST_FILE = Escargot/Info.plist;
@@ -493,6 +684,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		561C8E8921E69EA6000F051D /* Build configuration list for PBXNativeTarget "EscargotSharingExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561C8E8721E69EA6000F051D /* Debug */,
+				561C8E8821E69EA6000F051D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		566162B421C9EF67000938CB /* Build configuration list for PBXProject "Escargot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

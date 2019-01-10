@@ -32,9 +32,7 @@ class RecipeParser: NSObject {
 		//MARK: - properties
 		var ingredientsQuery: String {
 			switch self {
-			case .ohSheGlows:
-				return "span.ingredient"
-			case .againstAllGrain:
+			case .ohSheGlows, .againstAllGrain:
 				return "span.ingredient"
 			default:
 				return ""
@@ -43,9 +41,7 @@ class RecipeParser: NSObject {
 		
 		var instructionQuery: String {
 			switch self {
-			case .ohSheGlows:
-				return "li.instruction"
-			case .againstAllGrain:
+			case .ohSheGlows, .againstAllGrain:
 				return "li.instruction"
 			default:
 				return ""
@@ -54,9 +50,7 @@ class RecipeParser: NSObject {
 		
 		var titleQuery: String {
 			switch self {
-			case .ohSheGlows:
-				return "title"
-			case .againstAllGrain:
+			case .ohSheGlows, .againstAllGrain:
 				return "title"
 			default:
 				return ""
@@ -135,18 +129,4 @@ class RecipeParser: NSObject {
 		contentType = RecipeContentType(host: url.host)
 		super.init()
 	}
-	//    func something() {
-	//        if let url = URL(string: "https://ohsheglows.com/2018/11/24/instant-pot-creamiest-steel-cut-oatmeal-with-stovetop-version/") {
-	//            let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
-	//
-	//            let result = try SwiftSoup.parse(html)
-	//            let ingredientsClear = try result.select("ul.ingredients")
-	//            ingredientsClear.forEach { print($0) }
-	//        }
-	//
-	//
-	//    } catch  {
-	//    print("There was an error parsing the HTML. \(error)")
-	//    }
-	//    }
 }
