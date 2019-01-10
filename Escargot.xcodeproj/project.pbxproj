@@ -16,6 +16,8 @@
 		561C8E9721E6ADBE000F051D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9421E6ADBE000F051D /* Recipe.swift */; };
 		561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9521E6ADBE000F051D /* Measurement.swift */; };
 		561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9621E6ADBE000F051D /* Ingredient.swift */; };
+		561C8E9B21E6F35D000F051D /* MeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9A21E6F35D000F051D /* MeasurementTests.swift */; };
+		561C8E9D21E6F401000F051D /* EscargotDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9C21E6F401000F051D /* EscargotDatabase.swift */; };
 		566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BC21C9EF67000938CB /* AppDelegate.swift */; };
 		566162BF21C9EF67000938CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BE21C9EF67000938CB /* ViewController.swift */; };
 		566162C221C9EF67000938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C021C9EF67000938CB /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 		561C8E9421E6ADBE000F051D /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ../../../Cooks/Cooks/Model/Recipe.swift; sourceTree = "<group>"; };
 		561C8E9521E6ADBE000F051D /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Measurement.swift; path = ../../../Cooks/Cooks/Model/Measurement.swift; sourceTree = "<group>"; };
 		561C8E9621E6ADBE000F051D /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = ../../../Cooks/Cooks/Model/Ingredient.swift; sourceTree = "<group>"; };
+		561C8E9A21E6F35D000F051D /* MeasurementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeasurementTests.swift; path = ../../Cooks/SousChefTests/MeasurementTests.swift; sourceTree = "<group>"; };
+		561C8E9C21E6F401000F051D /* EscargotDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EscargotDatabase.swift; path = ../../../Cooks/Cooks/Utility/EscargotDatabase.swift; sourceTree = "<group>"; };
 		566162B921C9EF67000938CB /* Escargot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Escargot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566162BC21C9EF67000938CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		566162BE21C9EF67000938CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		566162D521C9EFFF000938CB /* EscargotTests */ = {
 			isa = PBXGroup;
 			children = (
+				561C8E9A21E6F35D000F051D /* MeasurementTests.swift */,
 				566162DF21C9F050000938CB /* RecipeParserTests.swift */,
 				566162D621C9EFFF000938CB /* EscargotTests.swift */,
 				566162E121C9F058000938CB /* Extras */,
@@ -203,6 +208,7 @@
 		566162E321C9F07A000938CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				561C8E9C21E6F401000F051D /* EscargotDatabase.swift */,
 				566162CE21C9EFEF000938CB /* RecipeParser.swift */,
 			);
 			path = Utilities;
@@ -388,6 +394,7 @@
 				561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */,
 				561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */,
 				566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */,
+				561C8E9D21E6F401000F051D /* EscargotDatabase.swift in Sources */,
 				561C8E9721E6ADBE000F051D /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +405,7 @@
 			files = (
 				566162DE21C9F006000938CB /* RecipeParser.swift in Sources */,
 				566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */,
+				561C8E9B21E6F35D000F051D /* MeasurementTests.swift in Sources */,
 				566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

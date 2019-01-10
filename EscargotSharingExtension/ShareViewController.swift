@@ -2,7 +2,7 @@
 //  ShareViewController.swift
 //  EscargotSharingExtension
 //
-//  Created by Jonathan Long on 1/9/19.
+//  Created by Heavenly Flower on 1/9/19.
 //  Copyright © 2019 Heavenly Flower. All rights reserved.
 //
 

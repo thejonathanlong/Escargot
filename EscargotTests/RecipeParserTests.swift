@@ -2,7 +2,7 @@
 //  RecipeParserTests.swift
 //  EscargotTests
 //
-//  Created by Jonathan Long on 12/18/18.
+//  Created by Heavenly Flower on 12/18/18.
 //  Copyright © 2018 Heavenly Flower. All rights reserved.
 //
 
