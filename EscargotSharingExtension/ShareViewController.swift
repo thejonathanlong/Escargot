@@ -45,6 +45,9 @@ class ShareViewController: SLComposeServiceViewController {
 		
 		if let shareURL = self.shareURL {
 			let recipeParser = RecipeParser(newURL: shareURL)
+			let recipe = recipeParser.recipe()
+			
+			print(recipe)
 			//1. Use the RecipeParser to create a Recipe
 			//2. Upload the recipe to iCloud
 		}

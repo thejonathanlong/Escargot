@@ -13,22 +13,34 @@
 		561C8E8D21E6A8A6000F051D /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
 		561C8E9021E6ACFE000F051D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C8E8F21E6ACFD000F051D /* CloudKit.framework */; };
 		561C8E9221E6AD65000F051D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C8E8F21E6ACFD000F051D /* CloudKit.framework */; };
-		561C8E9721E6ADBE000F051D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9421E6ADBE000F051D /* Recipe.swift */; };
 		561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9521E6ADBE000F051D /* Measurement.swift */; };
 		561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9621E6ADBE000F051D /* Ingredient.swift */; };
 		561C8E9B21E6F35D000F051D /* MeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9A21E6F35D000F051D /* MeasurementTests.swift */; };
 		561C8E9D21E6F401000F051D /* EscargotDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9C21E6F401000F051D /* EscargotDatabase.swift */; };
+		56350A2F21E7FE440024357F /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56350A2E21E7FE440024357F /* SwiftSoup.framework */; };
+		56350A3021E7FE440024357F /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56350A2E21E7FE440024357F /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56350A3221E92D690024357F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9621E6ADBE000F051D /* Ingredient.swift */; };
+		56350A3321E92D6C0024357F /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9521E6ADBE000F051D /* Measurement.swift */; };
+		56350A3521E92EE20024357F /* EscargotDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9C21E6F401000F051D /* EscargotDatabase.swift */; };
+		56350A3821E92F860024357F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A3621E92F860024357F /* Recipe.swift */; };
+		56350A3921E9300B0024357F /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
+		56350A3A21E930140024357F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A3621E92F860024357F /* Recipe.swift */; };
+		56350A3B21E930180024357F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A3621E92F860024357F /* Recipe.swift */; };
+		56350A3C21E930850024357F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9621E6ADBE000F051D /* Ingredient.swift */; };
+		56350A3D21E930880024357F /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9521E6ADBE000F051D /* Measurement.swift */; };
+		56350A3F21E930A70024357F /* IngredientLinguisticTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A3E21E930A70024357F /* IngredientLinguisticTagger.swift */; };
+		56350A4021E930A70024357F /* IngredientLinguisticTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A3E21E930A70024357F /* IngredientLinguisticTagger.swift */; };
+		56350A4121E9310E0024357F /* IngredientLinguisticTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A3E21E930A70024357F /* IngredientLinguisticTagger.swift */; };
+		56350A4321E934C90024357F /* IngredientLinguisticTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A4221E934C90024357F /* IngredientLinguisticTesterTests.swift */; };
+		56350A4421E9352F0024357F /* EscargotDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9C21E6F401000F051D /* EscargotDatabase.swift */; };
 		566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BC21C9EF67000938CB /* AppDelegate.swift */; };
 		566162BF21C9EF67000938CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BE21C9EF67000938CB /* ViewController.swift */; };
 		566162C221C9EF67000938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C021C9EF67000938CB /* Main.storyboard */; };
 		566162C421C9EF6A000938CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566162C321C9EF6A000938CB /* Assets.xcassets */; };
 		566162C721C9EF6A000938CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C521C9EF6A000938CB /* LaunchScreen.storyboard */; };
-		566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
 		566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162D621C9EFFF000938CB /* EscargotTests.swift */; };
 		566162DE21C9F006000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
 		566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162DF21C9F050000938CB /* RecipeParserTests.swift */; };
-		566162E721C9F2AB000938CB /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566162E621C9F2AB000938CB /* SwiftSoup.framework */; };
-		566162E921C9F388000938CB /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566162E821C9F388000938CB /* SwiftSoup.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +72,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56350A3121E7FE440024357F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				56350A3021E7FE440024357F /* SwiftSoup.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -70,11 +93,14 @@
 		561C8E8E21E6ACE7000F051D /* Escargot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Escargot.entitlements; sourceTree = "<group>"; };
 		561C8E8F21E6ACFD000F051D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		561C8E9121E6AD60000F051D /* EscargotSharingExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EscargotSharingExtension.entitlements; sourceTree = "<group>"; };
-		561C8E9421E6ADBE000F051D /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ../../../Cooks/Cooks/Model/Recipe.swift; sourceTree = "<group>"; };
-		561C8E9521E6ADBE000F051D /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Measurement.swift; path = ../../../Cooks/Cooks/Model/Measurement.swift; sourceTree = "<group>"; };
-		561C8E9621E6ADBE000F051D /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = ../../../Cooks/Cooks/Model/Ingredient.swift; sourceTree = "<group>"; };
-		561C8E9A21E6F35D000F051D /* MeasurementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeasurementTests.swift; path = ../../Cooks/SousChefTests/MeasurementTests.swift; sourceTree = "<group>"; };
-		561C8E9C21E6F401000F051D /* EscargotDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EscargotDatabase.swift; path = ../../../Cooks/Cooks/Utility/EscargotDatabase.swift; sourceTree = "<group>"; };
+		561C8E9521E6ADBE000F051D /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		561C8E9621E6ADBE000F051D /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		561C8E9A21E6F35D000F051D /* MeasurementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementTests.swift; sourceTree = "<group>"; };
+		561C8E9C21E6F401000F051D /* EscargotDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscargotDatabase.swift; sourceTree = "<group>"; };
+		56350A2E21E7FE440024357F /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56350A3621E92F860024357F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		56350A3E21E930A70024357F /* IngredientLinguisticTagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientLinguisticTagger.swift; sourceTree = "<group>"; };
+		56350A4221E934C90024357F /* IngredientLinguisticTesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientLinguisticTesterTests.swift; sourceTree = "<group>"; };
 		566162B921C9EF67000938CB /* Escargot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Escargot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566162BC21C9EF67000938CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		566162BE21C9EF67000938CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,8 +113,6 @@
 		566162D621C9EFFF000938CB /* EscargotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscargotTests.swift; sourceTree = "<group>"; };
 		566162D821C9EFFF000938CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566162DF21C9F050000938CB /* RecipeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParserTests.swift; sourceTree = "<group>"; };
-		566162E621C9F2AB000938CB /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		566162E821C9F388000938CB /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566162E921C9F388000938CB /* SwiftSoup.framework in Frameworks */,
 				561C8E9021E6ACFE000F051D /* CloudKit.framework in Frameworks */,
+				56350A2F21E7FE440024357F /* SwiftSoup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566162E721C9F2AB000938CB /* SwiftSoup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +159,7 @@
 			children = (
 				561C8E9621E6ADBE000F051D /* Ingredient.swift */,
 				561C8E9521E6ADBE000F051D /* Measurement.swift */,
-				561C8E9421E6ADBE000F051D /* Recipe.swift */,
+				56350A3621E92F860024357F /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,8 +167,8 @@
 		566162B021C9EF67000938CB = {
 			isa = PBXGroup;
 			children = (
+				56350A2E21E7FE440024357F /* SwiftSoup.framework */,
 				566162BB21C9EF67000938CB /* Escargot */,
-				566162E421C9F08A000938CB /* ViewControllers */,
 				561C8E7D21E69EA6000F051D /* EscargotSharingExtension */,
 				566162D521C9EFFF000938CB /* EscargotTests */,
 				566162BA21C9EF67000938CB /* Products */,
@@ -170,6 +193,7 @@
 				566162C321C9EF6A000938CB /* Assets.xcassets */,
 				566162C821C9EF6A000938CB /* Info.plist */,
 				566162BC21C9EF67000938CB /* AppDelegate.swift */,
+				566162E421C9F08A000938CB /* ViewControllers */,
 				561C8E9321E6AD95000F051D /* Model */,
 				566162E221C9F070000938CB /* UI */,
 				566162E321C9F07A000938CB /* Utilities */,
@@ -180,6 +204,7 @@
 		566162D521C9EFFF000938CB /* EscargotTests */ = {
 			isa = PBXGroup;
 			children = (
+				56350A4221E934C90024357F /* IngredientLinguisticTesterTests.swift */,
 				561C8E9A21E6F35D000F051D /* MeasurementTests.swift */,
 				566162DF21C9F050000938CB /* RecipeParserTests.swift */,
 				566162D621C9EFFF000938CB /* EscargotTests.swift */,
@@ -208,6 +233,7 @@
 		566162E321C9F07A000938CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				56350A3E21E930A70024357F /* IngredientLinguisticTagger.swift */,
 				561C8E9C21E6F401000F051D /* EscargotDatabase.swift */,
 				566162CE21C9EFEF000938CB /* RecipeParser.swift */,
 			);
@@ -226,8 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				561C8E8F21E6ACFD000F051D /* CloudKit.framework */,
-				566162E821C9F388000938CB /* SwiftSoup.framework */,
-				566162E621C9F2AB000938CB /* SwiftSoup.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,6 +284,7 @@
 				566162B621C9EF67000938CB /* Frameworks */,
 				566162B721C9EF67000938CB /* Resources */,
 				561C8E8A21E69EA6000F051D /* Embed App Extensions */,
+				56350A3121E7FE440024357F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,8 +405,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56350A3521E92EE20024357F /* EscargotDatabase.swift in Sources */,
 				561C8E8D21E6A8A6000F051D /* RecipeParser.swift in Sources */,
+				56350A4021E930A70024357F /* IngredientLinguisticTagger.swift in Sources */,
 				561C8E7F21E69EA6000F051D /* ShareViewController.swift in Sources */,
+				56350A3821E92F860024357F /* Recipe.swift in Sources */,
+				56350A3321E92D6C0024357F /* Measurement.swift in Sources */,
+				56350A3221E92D690024357F /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,11 +421,12 @@
 			files = (
 				566162BF21C9EF67000938CB /* ViewController.swift in Sources */,
 				566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */,
+				56350A3F21E930A70024357F /* IngredientLinguisticTagger.swift in Sources */,
+				56350A3A21E930140024357F /* Recipe.swift in Sources */,
+				56350A3921E9300B0024357F /* RecipeParser.swift in Sources */,
 				561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */,
 				561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */,
-				566162CF21C9EFEF000938CB /* RecipeParser.swift in Sources */,
 				561C8E9D21E6F401000F051D /* EscargotDatabase.swift in Sources */,
-				561C8E9721E6ADBE000F051D /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,10 +434,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56350A4321E934C90024357F /* IngredientLinguisticTesterTests.swift in Sources */,
 				566162DE21C9F006000938CB /* RecipeParser.swift in Sources */,
 				566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */,
+				56350A4121E9310E0024357F /* IngredientLinguisticTagger.swift in Sources */,
+				56350A3C21E930850024357F /* Ingredient.swift in Sources */,
 				561C8E9B21E6F35D000F051D /* MeasurementTests.swift in Sources */,
 				566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */,
+				56350A3B21E930180024357F /* Recipe.swift in Sources */,
+				56350A4421E9352F0024357F /* EscargotDatabase.swift in Sources */,
+				56350A3D21E930880024357F /* Measurement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -130,3 +130,20 @@ class RecipeParser: NSObject {
 		super.init()
 	}
 }
+
+// MARK: - Recipe Object
+extension RecipeParser {
+	func recipe() -> Recipe {
+		return Recipe(name: titleList.first ?? "", ingredients: ingredients(), instructions: instructionList, image: nil, tags: [], source: url.path)
+	}
+	
+	func ingredients() -> [Ingredient] {
+		var ingredients: [Ingredient] = []
+		let ingredientTagger = IngredientLinguisticTagger(tagSchemes: NSLinguisticTagger.availableTagSchemes(forLanguage: "en"), options: 0)
+		for ingredientString in ingredientList {
+			ingredientTagger.string = ingredientString
+			ingredients += ingredientTagger.ingredients()
+		}
+		return ingredients
+	}
+}
