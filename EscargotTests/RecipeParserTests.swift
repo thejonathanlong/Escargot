@@ -223,6 +223,23 @@ extension RecipeParserTests {
 	}
 }
 
+extension RecipeParserTests {
+	func testOhSheGlowsOatmealRecipe() {
+		guard let parser = ohSheGlowsOatmealRecipeParser() else {
+			XCTAssert(false, "Failed to create a Recipe Parser")
+			return
+		}
+		
+		let r = parser.recipe()
+		let instructions = r.instructions
+		let ingredients = r.ingredients
+		
+		XCTAssertNotNil(r, "Recipe should not be nil");
+		XCTAssert(instructions.count == 3)
+		XCTAssert(instructions == ["STOVETOP METHOD: Pour the can of coconut milk and 1 cup (250 mL) water into a medium pot and bring to a low boil over high heat.", "Add the steel-cut oats to the pot and stir to combine. Immediately reduce the heat to low (low heat is important or they’ll burn) and gently simmer, covered, for 30 to 40 minutes, stirring four to five times during cooking and reducing heat if necessary to prevent burning. This method produces a thick pot of oats. For a porridge-like consistency, stir more water in to your liking. I like to stir in about 1/2 cup (125 mL) water after cooking.", "Portion into bowls and top with your desired garnishes—I love the combo of pure maple syrup, toasted walnuts, seasonal fruit, fine sea salt, cinnamon, and raisins or chopped dates, but feel free to get creative and change it up depending on the season. Leftovers will keep in an airtight container in the fridge for 5 to 7 days or you can freeze them for up to 1 month. I store cooled single portions in freezer-safe bags and lie them flat in the freezer for easy stacking. Reheat refrigerated or thawed leftovers on the stovetop in a small pot along with a splash of water or milk over medium heat."])
+	}
+}
+
 //MARK: - Recipe Parser Test Utilities
 extension RecipeParserTests {
 	func ohSheGlowsOatmealRecipeParser() -> RecipeParser? {

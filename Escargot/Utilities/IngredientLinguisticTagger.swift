@@ -21,7 +21,7 @@ struct TaggedIngredient {
 
 class IngredientLinguisticTagger: NSLinguisticTagger {
 	
-	static let exceptions = ["thyme", "cinnamon", "salt", "quinoa"]
+	static let exceptions = ["thyme", "cinnamon", "salt", "quinoa", "chili", "almond", "aminos"]
 	
 	func ingredients() -> [Ingredient] {
 		assert(string != nil)
@@ -41,14 +41,12 @@ class IngredientLinguisticTagger: NSLinguisticTagger {
 	
 	func enumerateTags(using block: (Ingredient) -> Void) {
 		guard let inputString = self.string else { return }
-//		var measurementRanges: Array<NSRange> = Array<NSRange>()
-		var measurementTypes : [MeasurementType] = []
 		
 		var measurementType: MeasurementType = .other
 		// gonna have to redo this. Probably search the string for the usmeasurements and the
 		for usMeasurement in Ingredient.usMeasurementLemma {
 			if inputString.contains(" \(usMeasurement) ") {
-				measurementType = MeasurementType(rawValue: usMeasurement)!
+				measurementType = MeasurementType(abbreviation: usMeasurement)
 				break;
 			}
 			
@@ -56,7 +54,7 @@ class IngredientLinguisticTagger: NSLinguisticTagger {
 		if measurementType == .other {
 			for metricMeasurement in Ingredient.metricMeasurementLemma {
 				if inputString.contains(" \(metricMeasurement) ") {
-					measurementType = MeasurementType(rawValue: metricMeasurement)!
+					measurementType = MeasurementType(abbreviation: metricMeasurement)
 					break;
 				}
 			}
@@ -109,7 +107,7 @@ class IngredientLinguisticTagger: NSLinguisticTagger {
 			switch tag {
 				
 			case .number, .otherWord:
-				let isNumber = Int(tokenInQuestion) != nil
+				let isNumber = Int(tokenInQuestion) != nil || Double(tokenInQuestion) != nil
 				if !isParenthetical && isNumber {
 					if lastTag == NSLinguisticTag.punctuation.rawValue{
 						specifiedAmount[specifiedAmount.count - 1].append(tokenInQuestion)

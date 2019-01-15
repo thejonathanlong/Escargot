@@ -290,6 +290,22 @@ enum MeasurementType: String {
 			self = .ounce
 		case "lb":
 			self = .pound
+		case "cups":
+			self = .cup
+		case "teaspoons":
+			self = .teaspoon
+		case "tablespoons":
+			self = .tablespoon
+		case "quarts":
+			self = .quart
+		case "gallons":
+			self = .gallon
+		case "cans":
+			self = .can
+		case "ounces":
+			self = .ounce
+		case "pounds":
+			self = .pound
 		default:
 			self = MeasurementType(rawValue: abbreviation)!
 		}

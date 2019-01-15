@@ -170,7 +170,6 @@ class IngredientLinguisticTesterTests: XCTestCase {
 	
 	// MARK: - Fractional Measurements
 	
-	// Expected failure until the radar is fixed.
 	func testLinguisticTaggerMeasurementTypeCupWithNoOf() {
 		ingredientLinguisticTagger.string = "1/2 cup warm water"
 		ingredientLinguisticTagger.enumerateTags { (ingredient) in
@@ -185,7 +184,7 @@ class IngredientLinguisticTesterTests: XCTestCase {
 	func testLinguisticTaggerMeasurementTypeFractionalCup() {
 		ingredientLinguisticTagger.string = "1/3 cup of cane sugar"
 		ingredientLinguisticTagger.enumerateTags { (ingredient) in
-			XCTAssertTrue(ingredient.measurement.amount == 1/3)
+			XCTAssertTrue(ingredient.measurement.amount == 1.0/3.0)
 			XCTAssertTrue(ingredient.measurement.type == .cup)
 			XCTAssertTrue(ingredient.item.contains("sugar"))
 			XCTAssertTrue(ingredient.item.contains("cane"))
@@ -512,7 +511,6 @@ class IngredientLinguisticTesterTests: XCTestCase {
 		XCTAssertTrue(i.measurement.type == .teaspoon)
 		XCTAssertTrue(i.item.contains("red"))
 		XCTAssertTrue(i.item.contains("pepper"))
-		XCTAssertTrue(i.item.contains("flakes"))
 	}
 	
 	func testShrimpStirFryIngredients6() {
@@ -597,6 +595,18 @@ class IngredientLinguisticTesterTests: XCTestCase {
 		let i = ingredientLinguisticTagger.ingredients()
 		
 		XCTAssertTrue(i.count == 3)
+	}
+	
+	func testToastedWalnuts() {
+		let text = "Toasted walnuts"
+		ingredientLinguisticTagger.string = text
+		let i = ingredientLinguisticTagger.ingredients()
+		let ingredient = i.first!
+		
+		XCTAssert(ingredient.measurement.amount == 0)
+		XCTAssert(ingredient.measurement.type == .other)
+		XCTAssert(ingredient.original.lowercased() == "toasted walnuts")
+		
 	}
 
 	// MARK: - Helpers

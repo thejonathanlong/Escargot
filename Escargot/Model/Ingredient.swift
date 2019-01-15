@@ -13,8 +13,9 @@ class Ingredient: NSObject {
 	let measurement: Measurement
 	let item: String
 	let original: String
-	static let usMeasurementLemma = Set(["pound", "gallon", "ounce", "quart", "cup", "pint", "tablespoon", "teaspoon", "dash", "pinch", "can", "lb", "oz", "c", "tbsp", "tsp"])
-	static let metricMeasurementLemma = Set(["liter", "gram", "milliliter", "kilogram", "g", "l", "ml", "kg"])
+	//Had to add plurals because of a new bug in ios 12. I need to write it still.
+	static let usMeasurementLemma = Set(["pound", "gallon", "ounce", "quart", "cup", "pint", "tablespoon", "teaspoon", "dash", "pinch", "can", "pounds", "gallons", "ounces", "quarts", "cups", "pints", "tablespoons", "teaspoons", "dashes", "pinches", "cans", "lb", "oz", "c", "tbsp", "tsp"])
+	static let metricMeasurementLemma = Set(["liter", "gram", "milliliter", "kilogram", "liters", "grams", "milliliters", "kilograms", "g", "l", "ml", "kg"])
 	
 	var itemDescription: String {
 		return debugDescription
