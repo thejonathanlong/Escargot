@@ -41,6 +41,8 @@
 		566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162D621C9EFFF000938CB /* EscargotTests.swift */; };
 		566162DE21C9F006000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
 		566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162DF21C9F050000938CB /* RecipeParserTests.swift */; };
+		56D5686321ED97D4002EAC04 /* AllRecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5686221ED97D4002EAC04 /* AllRecipesTableViewController.swift */; };
+		56D5686621ED9F5F002EAC04 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5686521ED9F5F002EAC04 /* RecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		566162D621C9EFFF000938CB /* EscargotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscargotTests.swift; sourceTree = "<group>"; };
 		566162D821C9EFFF000938CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566162DF21C9F050000938CB /* RecipeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParserTests.swift; sourceTree = "<group>"; };
+		56D5686221ED97D4002EAC04 /* AllRecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipesTableViewController.swift; sourceTree = "<group>"; };
+		56D5686521ED9F5F002EAC04 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 				566162C821C9EF6A000938CB /* Info.plist */,
 				566162BC21C9EF67000938CB /* AppDelegate.swift */,
 				566162E421C9F08A000938CB /* ViewControllers */,
+				56D5686421ED9F3C002EAC04 /* Views */,
 				561C8E9321E6AD95000F051D /* Model */,
 				566162E221C9F070000938CB /* UI */,
 				566162E321C9F07A000938CB /* Utilities */,
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				566162BE21C9EF67000938CB /* ViewController.swift */,
+				56D5686221ED97D4002EAC04 /* AllRecipesTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +260,14 @@
 				561C8E8F21E6ACFD000F051D /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56D5686421ED9F3C002EAC04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56D5686521ED9F5F002EAC04 /* RecipeTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +434,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				566162BF21C9EF67000938CB /* ViewController.swift in Sources */,
+				56D5686621ED9F5F002EAC04 /* RecipeTableViewCell.swift in Sources */,
 				566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */,
+				56D5686321ED97D4002EAC04 /* AllRecipesTableViewController.swift in Sources */,
 				56350A3F21E930A70024357F /* IngredientLinguisticTagger.swift in Sources */,
 				56350A3A21E930140024357F /* Recipe.swift in Sources */,
 				56350A3921E9300B0024357F /* RecipeParser.swift in Sources */,
