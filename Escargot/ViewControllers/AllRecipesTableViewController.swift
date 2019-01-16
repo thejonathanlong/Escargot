@@ -24,7 +24,7 @@ extension AllRecipesTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let url = URL(string: "https://againstallgrain.com/2018/09/26/gluten-free-brazilian-cheese-bread-pao-de-queijo/")!
+		let url = URL(string: "https://allrecipes.com/recipe/228411/baked-ziti-casserole/?internalSource=staff%20pick&referringId=95&referringContentType=Recipe%20Hub")!
 		let parser = RecipeParser(newURL: url)
 		let recipe = parser.recipe()
 		printDebug("\(parser.images)")

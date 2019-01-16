@@ -16,6 +16,7 @@ class RecipeParser: NSObject {
 		case ohSheGlows = "ohsheglows.com"
 		case unsupported = "unsupported"
 		case againstAllGrain = "againstallgrain.com"
+		case allRecipes = "allrecipes.com"
 		
 		//MARK: - init
 		init(host: String?) {
@@ -24,6 +25,8 @@ class RecipeParser: NSObject {
 				self = .ohSheGlows
 			case RecipeContentType.againstAllGrain.rawValue:
 				self = .againstAllGrain
+			case RecipeContentType.allRecipes.rawValue:
+				self = .allRecipes
 			default:
 				self = .unsupported
 			}
@@ -34,6 +37,8 @@ class RecipeParser: NSObject {
 			switch self {
 			case .ohSheGlows, .againstAllGrain:
 				return "span.ingredient"
+			case .allRecipes:
+				return "span.recipe-ingred_txt"
 			default:
 				return ""
 			}
@@ -43,6 +48,8 @@ class RecipeParser: NSObject {
 			switch self {
 			case .ohSheGlows, .againstAllGrain:
 				return "li.instruction"
+			case .allRecipes:
+				return "span.recipe-directions__list--item"
 			default:
 				return ""
 			}
@@ -50,7 +57,7 @@ class RecipeParser: NSObject {
 		
 		var titleQuery: String {
 			switch self {
-			case .ohSheGlows, .againstAllGrain:
+			case .ohSheGlows, .againstAllGrain, .allRecipes:
 				return "title"
 			default:
 				return ""
@@ -137,7 +144,17 @@ class RecipeParser: NSObject {
 // MARK: - Recipe Object
 extension RecipeParser {
 	func recipe() -> Recipe {
-		return Recipe(name: titleList.first ?? "", ingredients: ingredients(), instructions: instructionList, image: nil, tags: [], source: url.path)
+		var image: UIImage? = nil
+		for imageURL in images {
+			if let imageURL = imageURL {
+				do {
+					let imageData = try Data(contentsOf: imageURL)
+					image = UIImage(data: imageData)
+					break
+				} catch { /* Didn't work. Onto the next one. */ }
+			}
+		}
+		return Recipe(name: titleList.first ?? "", ingredients: ingredients(), instructions: instructionList, image: image, tags: [], source: url.path)
 	}
 	
 	func ingredients() -> [Ingredient] {
