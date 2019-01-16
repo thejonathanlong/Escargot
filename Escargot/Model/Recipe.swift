@@ -120,10 +120,13 @@ extension Recipe {
 			return record
 		}
 		else {
-			let recordID = CKRecord.ID(recordName: name, zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
+			let recordID = CKRecord.ID(zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
 			let record = CKRecord(recordType: EscargotDatabase.recipeRecordType, recordID: recordID)
 			record[Recipe.recordNameKey] = name as CKRecordValue
-			record[Recipe.recordTagsKey] = tags as CKRecordValue
+			if tags.count != 0 {
+				record[Recipe.recordTagsKey] = tags as CKRecordValue
+			}
+			
 			record[Recipe.recordInstructionsKey] = instructions as CKRecordValue
 			record[Recipe.recordSourceKey] = source as CKRecordValue
 			//		if let image = image {

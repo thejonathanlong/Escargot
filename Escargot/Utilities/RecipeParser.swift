@@ -57,13 +57,20 @@ class RecipeParser: NSObject {
 			}
 		}
 		
+		var imageQuery: String {
+			switch self {
+			default:
+				return "img[src]"
+			}
+		}
+		
 	}
 	
 	//MARK: - properties
 	let url: URL
 	let contentType: RecipeContentType
 	
-	lazy var documentOrNil: Document? = { [unowned self] in
+	lazy var document: Document? = { [unowned self] in
 		var doc: Document? = nil
 		do {
 			let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
@@ -76,51 +83,47 @@ class RecipeParser: NSObject {
 	}()
 	
 	lazy var ingredientList: [String] = { [unowned self] in
-		var ingredientsList: [String] = []
-		guard let document = documentOrNil else {
-			print("No document returning empty ingredient list.")
-			return ingredientsList
-		}
-		
-		let query = contentType.ingredientsQuery
+		var ingredientList: [String] = []
 		do {
-			ingredientsList = try document.select(query).map({ try $0.text() })
+			ingredientList = try executeQuery(query: contentType.ingredientsQuery).map({ try $0.text() })
 		} catch let error {
-			print("There was an error trying to select the ingredeint query \(query). Error - \(error)")
+			printDebug("There was an error trying to select the ingredient list query. \(error)")
 		}
-		return ingredientsList
+		return ingredientList
 	}()
 	
 	lazy var instructionList: [String] = { [unowned self] in
 		var instructionList: [String] = []
-		guard let document = documentOrNil else {
-			print("No document returning empty instruction list.")
-			return instructionList
-		}
-		
-		let query = contentType.instructionQuery
 		do {
-			instructionList = try document.select(query).map({ try $0.text() })
+			instructionList = try executeQuery(query: contentType.instructionQuery).map({ try $0.text() })
 		} catch let error {
-			print("There was an error trying to select the instruction query \(query). Error - \(error)")
+			printDebug("There was an error trying to select the instruction list query. \(error)")
 		}
 		return instructionList
 	}()
 	
 	lazy var titleList: [String] = { [unowned self] in
 		var titleList: [String] = []
-		guard let document = documentOrNil else {
-			print("No document returning empty instruction list.")
-			return instructionList
-		}
-		
-		let query = contentType.titleQuery
 		do {
-			titleList = try document.select(query).map({ try $0.text() })
+			titleList = try executeQuery(query: contentType.titleQuery).map({ try $0.text() })
 		} catch let error {
-			print("There was an error trying to select the instruction query \(query). Error - \(error)")
+			printDebug("There was an error trying to select the title list query. \(error)")
 		}
 		return titleList
+	}()
+	
+	lazy var images: [URL?] = { [unowned self] in
+		var imageList: [URL?] = []
+		do {
+			imageList = try executeQuery(query: contentType.imageQuery).map({ (element) -> URL? in
+				let text = try element.attr("src")
+				return URL(string: "https:\(text)")
+			})
+		} catch let error {
+			printDebug("There was an error trying to select the title list query. \(error)")
+		}
+		
+		return imageList
 	}()
 	
 	//MARK: - Initializers
@@ -145,5 +148,19 @@ extension RecipeParser {
 			ingredients += ingredientTagger.ingredients()
 		}
 		return ingredients
+	}
+}
+
+// MARK: - Utilities
+extension RecipeParser {
+	func executeQuery(query: String) throws  -> Elements {
+		var e = Elements()
+		guard let document = document else {
+			print("No document returning empty element.")
+			return e
+		}
+		e = try document.select(query)
+		
+		return e
 	}
 }

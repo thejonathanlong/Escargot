@@ -85,7 +85,8 @@ extension Ingredient {
 	}
 	
 	var record: CKRecord {
-		let ingredientRecord = CKRecord(recordType: EscargotDatabase.ingredientRecordType, zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
+		let recordID = CKRecord.ID(zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
+		let ingredientRecord = CKRecord(recordType: EscargotDatabase.ingredientRecordType, recordID: recordID)
 		ingredientRecord[Ingredient.recordItemKey] = item as CKRecordValue
 		ingredientRecord[Ingredient.recordOriginalKey] = original as CKRecordValue
 		ingredientRecord[Ingredient.recordMeasurementAmountKey] = measurement.amount as CKRecordValue

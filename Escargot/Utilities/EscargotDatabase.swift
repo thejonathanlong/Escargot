@@ -17,14 +17,19 @@ class EscargotDatabase: NSObject {
 	
 	static let recipeRecordZoneName = "EscargotRecipes"
 	
-	let publicDB = CKContainer.default().publicCloudDatabase
-	let privateDB = CKContainer.default().privateCloudDatabase
+	static let cloudKitContainerIdentifier = "iCloud.com.flower.heavenly.Escargot"
+	let cloudKitContainer = CKContainer(identifier: EscargotDatabase.cloudKitContainerIdentifier)
+	
+	let publicDB: CKDatabase
+	let privateDB: CKDatabase
 	
 	var recipeZone: CKRecordZone?
 	
 	static let shared = EscargotDatabase()
 	
 	override init() {
+		publicDB = cloudKitContainer.publicCloudDatabase
+		privateDB = cloudKitContainer.privateCloudDatabase
 		super.init()
 		let recipeRecordZoneID = CKRecordZone.ID(zoneName: EscargotDatabase.recipeRecordZoneName, ownerName: CKCurrentUserDefaultName)
 		let recipeRecordZoneFetchOperation = CKFetchRecordZonesOperation(recordZoneIDs: [recipeRecordZoneID])
@@ -150,7 +155,7 @@ extension EscargotDatabase {
 }
 
 
-// MARK - Saving Recipes
+// MARK: - Saving Recipes
 extension EscargotDatabase {
 	
 	func save(recipe: Recipe, onCompletionBlock: @escaping ([CKRecord]?, [CKRecord.ID]?, Error?) -> Void) {
@@ -177,6 +182,7 @@ extension EscargotDatabase {
 			onCompletionBlock(recordsOrNil, reocrdIDsOrNil, errorOrNil)
 		}
 		modifyRecordsOperation.savePolicy = .changedKeys
+		modifyRecordsOperation.database = privateDB
 		modifyRecordsOperation.start()
 	}
 	
@@ -197,14 +203,14 @@ extension EscargotDatabase {
 	}
 }
 
-// MARK - Deleting Recipes
+// MARK: - Deleting Recipes
 extension EscargotDatabase {
 	func delete(recipe: Recipe, completion: @escaping (CKRecord.ID?, Error?) -> Void) {
 		privateDB.delete(withRecordID: recipe.record.recordID, completionHandler: completion)
 	}
 }
 
-// MARK - Saving Ingredients
+// MARK: - Saving Ingredients
 extension EscargotDatabase {
 	func saveSynchronously(ingredient item: String, original: String, measurementAmount: Double, measurementType: String) -> CKRecord.ID {
 		let ingredientRecord = CKRecord(recordType: EscargotDatabase.ingredientRecordType)

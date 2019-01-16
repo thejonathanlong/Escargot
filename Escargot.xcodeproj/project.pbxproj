@@ -11,8 +11,6 @@
 		561C8E8221E69EA6000F051D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561C8E8021E69EA6000F051D /* MainInterface.storyboard */; };
 		561C8E8621E69EA6000F051D /* EscargotSharingExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 561C8E7C21E69EA5000F051D /* EscargotSharingExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		561C8E8D21E6A8A6000F051D /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
-		561C8E9021E6ACFE000F051D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C8E8F21E6ACFD000F051D /* CloudKit.framework */; };
-		561C8E9221E6AD65000F051D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C8E8F21E6ACFD000F051D /* CloudKit.framework */; };
 		561C8E9821E6ADBE000F051D /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9521E6ADBE000F051D /* Measurement.swift */; };
 		561C8E9921E6ADBE000F051D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9621E6ADBE000F051D /* Ingredient.swift */; };
 		561C8E9B21E6F35D000F051D /* MeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9A21E6F35D000F051D /* MeasurementTests.swift */; };
@@ -41,6 +39,8 @@
 		566162D721C9EFFF000938CB /* EscargotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162D621C9EFFF000938CB /* EscargotTests.swift */; };
 		566162DE21C9F006000938CB /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162CE21C9EFEF000938CB /* RecipeParser.swift */; };
 		566162E021C9F050000938CB /* RecipeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162DF21C9F050000938CB /* RecipeParserTests.swift */; };
+		56C4370021EE55DD00E6B266 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C436FF21EE55DD00E6B266 /* CloudKit.framework */; };
+		56C4370121EE574B00E6B266 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C436FF21EE55DD00E6B266 /* CloudKit.framework */; };
 		56D5686321ED97D4002EAC04 /* AllRecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5686221ED97D4002EAC04 /* AllRecipesTableViewController.swift */; };
 		56D5686621ED9F5F002EAC04 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5686521ED9F5F002EAC04 /* RecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -93,7 +93,6 @@
 		561C8E8121E69EA6000F051D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		561C8E8321E69EA6000F051D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		561C8E8E21E6ACE7000F051D /* Escargot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Escargot.entitlements; sourceTree = "<group>"; };
-		561C8E8F21E6ACFD000F051D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		561C8E9121E6AD60000F051D /* EscargotSharingExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EscargotSharingExtension.entitlements; sourceTree = "<group>"; };
 		561C8E9521E6ADBE000F051D /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		561C8E9621E6ADBE000F051D /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		566162D621C9EFFF000938CB /* EscargotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscargotTests.swift; sourceTree = "<group>"; };
 		566162D821C9EFFF000938CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566162DF21C9F050000938CB /* RecipeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParserTests.swift; sourceTree = "<group>"; };
+		56C436FF21EE55DD00E6B266 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		56D5686221ED97D4002EAC04 /* AllRecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipesTableViewController.swift; sourceTree = "<group>"; };
 		56D5686521ED9F5F002EAC04 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				561C8E9221E6AD65000F051D /* CloudKit.framework in Frameworks */,
+				56C4370021EE55DD00E6B266 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				561C8E9021E6ACFE000F051D /* CloudKit.framework in Frameworks */,
 				56350A2F21E7FE440024357F /* SwiftSoup.framework in Frameworks */,
+				56C4370121EE574B00E6B266 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +257,7 @@
 		566162E521C9F2AB000938CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				561C8E8F21E6ACFD000F051D /* CloudKit.framework */,
+				56C436FF21EE55DD00E6B266 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

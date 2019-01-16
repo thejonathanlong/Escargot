@@ -13,6 +13,7 @@ import CoreServices
 class ShareViewController: SLComposeServiceViewController {
 	
 	var shareURL: URL?
+	var sharedDatabse = EscargotDatabase.shared
 	
 	override func isContentValid() -> Bool {
 		guard let extensionContext = extensionContext else {
@@ -46,10 +47,18 @@ class ShareViewController: SLComposeServiceViewController {
 		if let shareURL = self.shareURL {
 			let recipeParser = RecipeParser(newURL: shareURL)
 			let recipe = recipeParser.recipe()
+			debugPrint("Sharing recipe: \(recipe)")
 			
-			print(recipe)
-			//1. Use the RecipeParser to create a Recipe
-			//2. Upload the recipe to iCloud
+			sharedDatabse.save(recipe: recipe) { (records, recordIDs, error) in
+				if error == nil {
+					if let records = records {
+						printDebug("Succesfully saved records \(records)")
+					}
+				} else if let error = error {
+					printDebug("There was an error trying to save recipe: \(recipe). Error - \(error)")
+				}
+			}
+			
 		}
 		
 		
