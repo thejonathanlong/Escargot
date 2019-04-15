@@ -77,7 +77,7 @@ class RecipeParser: NSObject {
 	let url: URL
 	let contentType: RecipeContentType
 	
-	lazy var document: Document? = { [unowned self] in
+	lazy var document: Document? = {
 		var doc: Document? = nil
 		do {
 			let html = try String(contentsOf: url, encoding: String.Encoding.utf8)
@@ -89,7 +89,7 @@ class RecipeParser: NSObject {
 		return doc
 	}()
 	
-	lazy var ingredientList: [String] = { [unowned self] in
+	lazy var ingredientList: [String] = {
 		var ingredientList: [String] = []
 		do {
 			ingredientList = try executeQuery(query: contentType.ingredientsQuery).map({ try $0.text() })
@@ -99,7 +99,7 @@ class RecipeParser: NSObject {
 		return ingredientList
 	}()
 	
-	lazy var instructionList: [String] = { [unowned self] in
+	lazy var instructionList: [String] = {
 		var instructionList: [String] = []
 		do {
 			instructionList = try executeQuery(query: contentType.instructionQuery).map({ try $0.text() })
@@ -109,7 +109,7 @@ class RecipeParser: NSObject {
 		return instructionList
 	}()
 	
-	lazy var titleList: [String] = { [unowned self] in
+	lazy var titleList: [String] = {
 		var titleList: [String] = []
 		do {
 			titleList = try executeQuery(query: contentType.titleQuery).map({ try $0.text() })
@@ -119,12 +119,12 @@ class RecipeParser: NSObject {
 		return titleList
 	}()
 	
-	lazy var images: [URL?] = { [unowned self] in
+	lazy var images: [URL?] = {
 		var imageList: [URL?] = []
 		do {
 			imageList = try executeQuery(query: contentType.imageQuery).map({ (element) -> URL? in
 				let text = try element.attr("src")
-				return URL(string: "https:\(text)")
+				return URL(string: text)
 			})
 		} catch let error {
 			printDebug("There was an error trying to select the title list query. \(error)")
@@ -144,17 +144,20 @@ class RecipeParser: NSObject {
 // MARK: - Recipe Object
 extension RecipeParser {
 	func recipe() -> Recipe {
-		var image: UIImage? = nil
+		var recipeImage: UIImage? = nil
 		for imageURL in images {
 			if let imageURL = imageURL {
 				do {
-					let imageData = try Data(contentsOf: imageURL)
-					image = UIImage(data: imageData)
-					break
+					if let image = UIImage(data: try Data(contentsOf: imageURL)), ((image.size.width > image.size.height) && image.size.width > 100.0 && image.size.height > 100.0) {
+						recipeImage = image
+						break;
+					}
+					
 				} catch { /* Didn't work. Onto the next one. */ }
 			}
 		}
-		return Recipe(name: titleList.first ?? "", ingredients: ingredients(), instructions: instructionList, image: image, tags: [], source: url.path)
+		
+		return Recipe(name: titleList.first ?? "", ingredients: ingredients(), instructions: instructionList, image: recipeImage, tags: [], source: url.path)
 	}
 	
 	func ingredients() -> [Ingredient] {

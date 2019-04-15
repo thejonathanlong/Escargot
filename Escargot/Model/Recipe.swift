@@ -89,10 +89,11 @@ class Recipe: NSObject {
 		let allIngredientsLoadedSemaphore = DispatchSemaphore(value: 0)
 		
 		if shouldWaitForIngredientsToLoad {
-			ingredientsFetchOperation.fetchRecordsCompletionBlock = { [unowned self] recordsByRecordIDOrNil, errorOrNil in
+			ingredientsFetchOperation.fetchRecordsCompletionBlock = { [weak self] recordsByRecordIDOrNil, errorOrNil in
+				guard let strongSelf = self else { return }
 				guard let recordsByRecordID = recordsByRecordIDOrNil else { print("There were no records for the ingredient record IDs."); return }
 				
-				self.ingredients.append(contentsOf: recordsByRecordID.values.map{ Ingredient(record: $0) })
+				strongSelf.ingredients.append(contentsOf: recordsByRecordID.values.map{ Ingredient(record: $0) })
 				print("All ingredients loaded!")
 				allIngredientsLoadedSemaphore.signal()
 			}
@@ -102,11 +103,12 @@ class Recipe: NSObject {
 			allIngredientsLoadedSemaphore.wait()
 		}
 		else {
-			ingredientsFetchOperation.perRecordCompletionBlock = { [unowned self] recordOrNil, recordIDOrNil, errorOrNil in
+			ingredientsFetchOperation.perRecordCompletionBlock = { [weak self] recordOrNil, recordIDOrNil, errorOrNil in
+				guard let strongSelf = self else { return }
 				guard let ingredientRecord = recordOrNil else { print("record was nil for record ID \(String(describing: recordIDOrNil))"); return }
 				
 				let ingredient = Ingredient(record: ingredientRecord)
-				self.ingredients.append(ingredient)
+				strongSelf.ingredients.append(ingredient)
 			}
 			ingredientsFetchOperation.start()
 		}
@@ -120,7 +122,8 @@ extension Recipe {
 			return record
 		}
 		else {
-			let recordID = CKRecord.ID(zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
+			let recordID = CKRecord.ID(recordName: Recipe.recordNameKey, zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
+//			let recordID = CKRecord.ID(zoneID: EscargotDatabase.shared.recipeZone!.zoneID)
 			let record = CKRecord(recordType: EscargotDatabase.recipeRecordType, recordID: recordID)
 			record[Recipe.recordNameKey] = name as CKRecordValue
 			if tags.count != 0 {

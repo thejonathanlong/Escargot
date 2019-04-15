@@ -27,6 +27,11 @@ class EscargotDatabase: NSObject {
 	
 	static let shared = EscargotDatabase()
 	
+	var status = EscargotDatabaseStatus.unknown {
+		didSet {
+			NotificationCenter.default.post(name: EscargotDatabase.statusDidChangeNotification, object: self)
+		}
+	}
 	override init() {
 		publicDB = cloudKitContainer.publicCloudDatabase
 		privateDB = cloudKitContainer.privateCloudDatabase
@@ -35,10 +40,10 @@ class EscargotDatabase: NSObject {
 		let recipeRecordZoneFetchOperation = CKFetchRecordZonesOperation(recordZoneIDs: [recipeRecordZoneID])
 		recipeRecordZoneFetchOperation.fetchRecordZonesCompletionBlock = { [weak self] (recordZonesByZoneID, error) in
 			guard let strongSelf = self else { return }
-			
 			if error == nil {
-				guard let recordZonesByZoneID = recordZonesByZoneID else { print("No recordZonesByZoneID in Record Zones fetch"); return }
+				guard let recordZonesByZoneID = recordZonesByZoneID else { strongSelf.status = .failed; print("No recordZonesByZoneID in Record Zones fetch"); return }
 				strongSelf.recipeZone = recordZonesByZoneID[recipeRecordZoneID]
+				strongSelf.status = .loaded
 			}
 			else if let error = error as? CKError {
 				print("There was an error \(error)")
@@ -46,6 +51,9 @@ class EscargotDatabase: NSObject {
 				
 				if databseError == EscargotDatabseError.zoneNotFound {
 					strongSelf.recipeZone = strongSelf.createAndSaveZoneNamed(name: EscargotDatabase.recipeRecordZoneName)
+					strongSelf.status = .loaded
+				} else {
+					strongSelf.status = .failed
 				}
 			}
 		}
@@ -292,4 +300,13 @@ extension EscargotDatabase {
 	}
 }
 
+//MARK: - Enum Status
+extension EscargotDatabase {
+	static let statusDidChangeNotification = NSNotification.Name("EscargotDatabse.statusDidChangeNotification")
+	enum EscargotDatabaseStatus: Int {
+		case unknown = 0
+		case loaded = 1
+		case failed = 2
+	}
+}
 

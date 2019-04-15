@@ -9,6 +9,9 @@
 import UIKit
 
 class AllRecipesTableViewController: UITableViewController {
+	//MARK: - Class Variables
+	static let didSelectRecipeSequeIdentifier = "DidSelectRecipeSequeIdentifier"
+	
 	//MARK: - Properties
 	var recipes: [Recipe] = [] {
 		didSet {
@@ -24,28 +27,29 @@ extension AllRecipesTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let url = URL(string: "https://allrecipes.com/recipe/228411/baked-ziti-casserole/?internalSource=staff%20pick&referringId=95&referringContentType=Recipe%20Hub")!
-		let parser = RecipeParser(newURL: url)
-		let recipe = parser.recipe()
-		printDebug("\(parser.images)")
-//		EscargotDatabase.shared.save(recipe: recipe) { (records, recordIDs, error) in
-//			if error == nil {
-//				if let records = records {
-//					printDebug("Saved records: \(records)")
-//				}
-//			}
-//			else if let error = error {
-//				printDebug("There was an error \(error)")
-//			}
-//		}
-	}
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		database.recipes { [weak self] (recipes) in
+		NotificationCenter.default.addObserver(forName: EscargotDatabase.statusDidChangeNotification, object: EscargotDatabase.shared, queue: OperationQueue.main) {[weak self] (note) in
 			guard let strongSelf = self else { return }
-			strongSelf.recipes = recipes
+			strongSelf.databaseStatusDidChange()
 		}
 	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		fetchAllRecipes()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier {
+		case AllRecipesTableViewController.didSelectRecipeSequeIdentifier:
+			let _ = segue.destination
+			
+		default:
+			break
+		}
+
+	}
+	
+	
 }
 
 // MARK: - Table view data source
@@ -65,16 +69,38 @@ extension AllRecipesTableViewController {
 		
 		cell.titleLabel.text = recipe.name
 		cell.recipeImageView.image = recipe.image
-		
+		cell.layoutIfNeeded()
 		return cell
 	}
 }
 
-//MARK: - Property Changes
+// MARK: - Table view delegate
 extension AllRecipesTableViewController {
-	func recipesDidChange() {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let recipe = recipes[indexPath.row]
+		
+		performSegue(withIdentifier: AllRecipesTableViewController.didSelectRecipeSequeIdentifier, sender: self)
+	}
+}
+
+//MARK: - utilities
+extension AllRecipesTableViewController {
+	private func recipesDidChange() {
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
+		}
+	}
+	
+	private func databaseStatusDidChange() {
+		fetchAllRecipes()
+	}
+	
+	private func fetchAllRecipes() {
+		if EscargotDatabase.shared.status == .loaded {
+			database.recipes { [weak self] (recipes) in
+				guard let strongSelf = self else { return }
+				strongSelf.recipes = recipes
+			}
 		}
 	}
 }

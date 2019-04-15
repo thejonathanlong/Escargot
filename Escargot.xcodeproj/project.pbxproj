@@ -32,7 +32,6 @@
 		56350A4321E934C90024357F /* IngredientLinguisticTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56350A4221E934C90024357F /* IngredientLinguisticTesterTests.swift */; };
 		56350A4421E9352F0024357F /* EscargotDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C8E9C21E6F401000F051D /* EscargotDatabase.swift */; };
 		566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BC21C9EF67000938CB /* AppDelegate.swift */; };
-		566162BF21C9EF67000938CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566162BE21C9EF67000938CB /* ViewController.swift */; };
 		566162C221C9EF67000938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C021C9EF67000938CB /* Main.storyboard */; };
 		566162C421C9EF6A000938CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566162C321C9EF6A000938CB /* Assets.xcassets */; };
 		566162C721C9EF6A000938CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566162C521C9EF6A000938CB /* LaunchScreen.storyboard */; };
@@ -433,7 +432,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566162BF21C9EF67000938CB /* ViewController.swift in Sources */,
 				56D5686621ED9F5F002EAC04 /* RecipeTableViewCell.swift in Sources */,
 				566162BD21C9EF67000938CB /* AppDelegate.swift in Sources */,
 				56D5686321ED97D4002EAC04 /* AllRecipesTableViewController.swift in Sources */,

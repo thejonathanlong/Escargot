@@ -306,6 +306,8 @@ enum MeasurementType: String {
 			self = .ounce
 		case "pounds":
 			self = .pound
+		case "g":
+			self = .other
 		default:
 			self = MeasurementType(rawValue: abbreviation)!
 		}

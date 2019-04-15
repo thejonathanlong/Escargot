@@ -22,14 +22,15 @@ class ShareViewController: SLComposeServiceViewController {
 		}
 
 		if let extensionItem = extensionContext.inputItems.first as? NSExtensionItem, let itemProvider = extensionItem.attachments?.first {
-			itemProvider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { [unowned self] (item, errorOrNil) in
-				if let error = errorOrNil {
+			itemProvider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { [weak self] (item, error) in
+				guard let strongSelf = self else { return }
+				if let error = error {
 					print("There was an error loading the URL from the item provider. \(error)")
 					return
 				}
 				
 				if let itemURL = item as? URL {
-					self.shareURL = itemURL
+					strongSelf.shareURL = itemURL
 				}
 				else {
 					print("The resulting item was not of type URL")
